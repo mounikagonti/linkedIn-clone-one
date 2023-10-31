@@ -41,3 +41,15 @@
     }
   }
 }
+
+@media screen and (max-width: $sm) {
+  .post {
+    .post__buttons {
+      .post__option__one {
+        .post__text {
+          display: none;
+        }
+      }
+    }
+  }
+}

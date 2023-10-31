@@ -64,10 +64,16 @@ const Header = () => {
           </Avatar>
           <div className='avatar_text'>me</div>
         </div> */}
-        <HeaderOptions Icon={CgMenuGridR} title='For Business' />
-        <Link href='' className='premium'>
-          try premium for <br /> free
-        </Link>
+        <div className='header__premium'>
+          <HeaderOptions
+            Icon={CgMenuGridR}
+            title='For Business'
+            className='premium'
+          />
+          <Link href='' className='premium'>
+            try premium for <br /> free
+          </Link>
+        </div>
       </div>
     </div>
   )

@@ -2,6 +2,7 @@
 //   max-width: 1320px;
 //   margin: auto;
 .header {
+  position: fixed;
   background-color: #ffffff;
   display: flex;
   justify-content: space-evenly;
@@ -44,10 +45,32 @@
         margin-right: 30px;
       }
     }
+    .header__premium {
+      display: flex;
+    }
     .premium {
       text-align: center;
       color: #74582d;
       font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: $md) {
+  .header {
+    .header__left {
+      .logo__container {
+        height: 34px;
+        margin-top: -18px;
+      }
+      .search_wrapper {
+        display: none;
+      }
+    }
+    .header__right {
+      .header__premium {
+        display: none;
+      }
     }
   }
 }

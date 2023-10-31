@@ -37,3 +37,16 @@
     }
   }
 }
+
+@media screen and (max-width: $sm) {
+  .login {
+    form {
+      input {
+        width: 300px;
+      }
+      button {
+        width: 300px;
+      }
+    }
+  }
+}

@@ -1,4 +1,6 @@
 .feedSection {
+  top: 52px;
+  position: relative;
   flex: 0.5;
   .feed__top {
     background-color: #ffff;
@@ -63,5 +65,25 @@
         color: #989898;
       }
     }
+  }
+}
+
+@media screen and (max-width: $md) {
+  .feedSection {
+    flex: 0.4;
+    .feed__top {
+      .feed__options {
+        .feed__option__one {
+          .feed__text {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: $sm) {
+  .feedSection {
+    flex: 0.4;
   }
 }
