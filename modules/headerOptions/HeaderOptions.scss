@@ -1,0 +1,23 @@
+.headerOptions {
+  @include displayCenter(center, center);
+  flex-direction: column;
+  margin-right: 30px;
+  .headerOptions__icon {
+    font-size: 25px;
+    color: $nine_brand;
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
+  }
+
+  .title {
+    color: gray;
+    font-size: 14px;
+  }
+  // .avatar {
+  //   border-left: 1px solid lightgray;
+  //   padding-left: 10px;
+  //   height: 100%;
+  // }
+}

@@ -1,0 +1,67 @@
+.feedSection {
+  flex: 0.5;
+  .feed__top {
+    background-color: #ffff;
+    height: 130px;
+    padding: 20px;
+    border-radius: 10px;
+    .feed_img_wrapper {
+      display: flex;
+      form {
+        @include displayCenter(center, center);
+        // gap: 160px;
+        margin-left: 10px;
+        border: 1px solid lightgray;
+        border-radius: 30px;
+        padding: 0 10px 0 20px;
+        width: 100%;
+        input {
+          border: none;
+          outline: none;
+          flex: 0.9;
+        }
+        button {
+          display: none;
+        }
+      }
+    }
+    // .post_btn {
+    //   @include displayCenter(center, center);
+    //   margin-left: 10px;
+    //   border: 1px solid lightgray;
+    //   border-radius: 30px;
+    //   padding: 0 310px 0 20px;
+    // }
+    .feed__options {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 80px;
+      margin-top: 20px;
+      // justify-content: space-evenly;
+      .feed__option__one {
+        display: flex;
+        gap: 12px;
+        .photo__icon {
+          font-size: 20px;
+          cursor: pointer;
+        }
+        .media {
+          color: #378fe9;
+        }
+        .event {
+          color: #c37d16;
+        }
+        .article {
+          color: #e06847;
+        }
+      }
+      .feed__text {
+        @include displayCenter(center, center);
+        font-weight: bolder;
+        font-size: 14px;
+        color: #989898;
+      }
+    }
+  }
+}

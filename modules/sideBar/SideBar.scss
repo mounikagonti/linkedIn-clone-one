@@ -1,0 +1,90 @@
+.sidebar {
+  top: 80px;
+  position: sticky;
+  flex: 0.2;
+  border-radius: 10px;
+  text-align: center;
+  height: fit-content;
+  .sidebar__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #ffff;
+    padding-bottom: 10px;
+    .img {
+      width: 100%;
+      height: 80px;
+      margin-bottom: -35px;
+      .sidebar__img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+    .sidebar__avatar {
+      border-bottom: 10px;
+    }
+    h2 {
+      font-size: 18px;
+    }
+    h4 {
+      font-size: 12px;
+      color: gray;
+    }
+  }
+  .sidebar_stats {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #ffff;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid lightgray;
+    .sidebar__stat {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      p {
+        color: $nine_brand;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .sidebar__statNumber {
+        color: #0065c6;
+        font-weight: bold;
+      }
+    }
+  }
+  .sidebar__bottom {
+    text-align: left;
+    border-radius: 10px;
+    background-color: #ffff;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin-top: 10px;
+    border-top: 1px solid lightgray;
+  }
+}
+
+.sidebar_recentItem {
+  display: flex;
+  color: gray;
+  font-weight: bolder;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  padding: 5px;
+  &:hover {
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .sidebar__hash {
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+}

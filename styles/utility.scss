@@ -1,0 +1,25 @@
+@mixin displayCenter($aline-items, $justify-content) {
+  display: flex;
+  align-items: $aline-items;
+  justify-content: $justify-content;
+}
+
+@mixin border($width, $color) {
+  border: $width solid $color;
+}
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xlg: 1200px;
+
+$brand_color: #d292ff;
+$second_brand: #40414f;
+$second_brand_hover: #333333;
+$third_brand: #0000ff;
+$fourth_brand: #ffffff;
+$fifth_brand: #00002e;
+$sixth_brand: #000000;
+$seventh_brand: #343541;
+$eighth_brand: #202123;
+$nine_brand: #3e3f4b;
