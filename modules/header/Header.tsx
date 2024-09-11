@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
 import {BiSearch} from 'react-icons/bi'
@@ -9,9 +10,6 @@ import {IoIosNotifications} from 'react-icons/io'
 import HeaderOptions from '../headerOptions/HeaderOptions'
 import Link from 'next/link'
 import {useDispatch, useSelector} from 'react-redux'
-// import {logout, selectUser} from '@/redux/userSlice'
-// import {auth} from '@/firebase'
-import {Avatar} from '@mui/material'
 import {logout, selectUser} from '@/app/redux/userSlice'
 import {auth} from '@/firebase'
 
@@ -23,6 +21,7 @@ const Header = () => {
     dispatch(logout())
     auth.signOut()
   }
+
   return (
     <div className='header'>
       <div className='header__left'>
@@ -53,17 +52,6 @@ const Header = () => {
           onClick={logoutOfApp}
           style={{Cursor: 'pointer', FontSize: '25px'}}
         />
-        {/* <div className='header_avatar'>
-          <Avatar
-            src={user?.photoUrl}
-            style={{height: '25px', width: '25px'}}
-            className='sidebar__avatar'
-            onClick={logoutOfApp}
-          >
-            {user?.email[0]}
-          </Avatar>
-          <div className='avatar_text'>me</div>
-        </div> */}
         <div className='header__premium'>
           <HeaderOptions
             Icon={CgMenuGridR}
@@ -74,6 +62,11 @@ const Header = () => {
             try premium for <br /> free
           </Link>
         </div>
+        {user ? (
+          <>
+            <button onClick={logoutOfApp}>LogOut</button>
+          </>
+        ) : null}
       </div>
     </div>
   )

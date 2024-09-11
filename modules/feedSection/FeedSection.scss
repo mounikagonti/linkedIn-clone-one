@@ -27,20 +27,12 @@
         }
       }
     }
-    // .post_btn {
-    //   @include displayCenter(center, center);
-    //   margin-left: 10px;
-    //   border: 1px solid lightgray;
-    //   border-radius: 30px;
-    //   padding: 0 310px 0 20px;
-    // }
     .feed__options {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 80px;
       margin-top: 20px;
-      // justify-content: space-evenly;
       .feed__option__one {
         display: flex;
         gap: 12px;
@@ -70,7 +62,7 @@
 
 @media screen and (max-width: $md) {
   .feedSection {
-    flex: 0.4;
+    flex: 1;
     .feed__top {
       .feed__options {
         .feed__option__one {
@@ -80,10 +72,5 @@
         }
       }
     }
-  }
-}
-@media screen and (max-width: $sm) {
-  .feedSection {
-    flex: 0.4;
   }
 }

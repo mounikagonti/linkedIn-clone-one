@@ -1,7 +1,8 @@
+'use client'
 import {login} from '@/app/redux/userSlice'
 import {auth} from '@/firebase'
 import Image from 'next/image'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useDispatch} from 'react-redux'
 
 const Login = () => {
@@ -9,8 +10,12 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
   const [profilePic, setProfilePic] = useState('')
-
+  const [isClient, setIsClient] = useState(false)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   const loginToApp = (e: any) => {
     e.preventDefault()
@@ -27,7 +32,18 @@ const Login = () => {
           })
         )
       })
-      .catch((error) => alert(error))
+      .catch((error) => {
+        if (error.code === 'auth/invalid-login-credentials') {
+          alert("Sorry, we couldn't find your account. Please Register Now ")
+        } else if (
+          error.code === 'auth/invalid-email' ||
+          error.code === 'auth/wrong-password'
+        ) {
+          alert('Invalid email or password. Please try again.')
+        } else {
+          alert(error.message)
+        }
+      })
   }
   const register = () => {
     if (!name) {
@@ -56,6 +72,10 @@ const Login = () => {
       .catch((error) => alert(error.message))
   }
 
+  if (!isClient) {
+    return null
+  }
+
   return (
     <div className='login'>
       <div className='logoImg'>
@@ -68,7 +88,7 @@ const Login = () => {
           alt='linkedIn logo'
         />
       </div>
-      <form action=''>
+      <form>
         <input
           type='text'
           value={name}
@@ -93,10 +113,10 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder='Password'
         />
-        <button onClick={loginToApp}>Sign In</button>
+        <button onClick={loginToApp}>Login</button>
       </form>
       <p>
-        Not a member?{' '}
+        Don’t have an account?
         <span className='login__register' onClick={register}>
           Register Now
         </span>

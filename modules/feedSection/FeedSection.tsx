@@ -1,8 +1,6 @@
+'use client'
 import React, {useEffect, useState} from 'react'
-import HeaderOptions from '../headerOptions/HeaderOptions'
-import Image from 'next/image'
 import {BsImage, BsCalendarWeek, BsNewspaper} from 'react-icons/bs'
-import {FaRegNewspaper} from 'react-icons/fa'
 import firebase from 'firebase/compat/app'
 import {useSelector} from 'react-redux'
 import {Avatar} from '@mui/material'
@@ -11,6 +9,7 @@ import {db} from '@/firebase'
 import {selectUser} from '@/app/redux/userSlice'
 
 const FeedSection = () => {
+  const [isClient, setIsClient] = useState(false)
   const user = useSelector(selectUser)
 
   const [input, setInput] = useState<any>('')
@@ -27,6 +26,7 @@ const FeedSection = () => {
           }))
         )
       )
+    setIsClient(true)
   }, [])
 
   const sendPost = (e: any) => {
@@ -41,6 +41,10 @@ const FeedSection = () => {
     setInput('')
   }
 
+  if (!isClient) {
+    return null
+  }
+
   return (
     <div className='feedSection'>
       <div className='feed__top'>
@@ -53,17 +57,6 @@ const FeedSection = () => {
             {user?.email[0]}
           </Avatar>
 
-          {/* <div className='feed__img'>
-            <Image
-              src={
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8zSRQ04BFEBRzw0i18HSgqh91if6JrRl_IQ&usqp=CAU'
-              }
-              alt='linkedInImage'
-              height={50}
-              width={50}
-              style={{borderRadius: 50}}
-            />
-          </div> */}
           <form>
             <input
               type='text'

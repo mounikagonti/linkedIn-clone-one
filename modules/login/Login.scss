@@ -27,7 +27,17 @@
       color: #fff;
       background-color: #0074b1;
       border-radius: 5px;
+      cursor: pointer;
     }
+  }
+  button {
+    width: 350px;
+    height: 50px;
+    font-size: large;
+    color: #fff;
+    background-color: #0074b1;
+    border-radius: 5px;
+    cursor: pointer;
   }
   p {
     margin-top: 10px;
@@ -50,3 +60,4 @@
     }
   }
 }
+
